@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Thinkful Tube</title>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
@@ -14,14 +13,15 @@
 	<main role="main">
 		<form action="#" method="get" class="search-form js-search-form">
 			<h2>Search for videos on YouTube</h2>
-			<label for="query">Search query</label>
-			<input type="text" name="query" class="js-query">
+			<label for="search-query">Search query</label>
+			<input type="text" name="query" id="search-query" class="js-query">
 			<button type="submit">Search</button>
 		</form>
 
 		<h2>Results</h2>
 		<div class="js-search-results"></div>
 	</main>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="index.js"></script>
 </body>
 </html>
