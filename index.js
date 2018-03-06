@@ -1,3 +1,4 @@
+const API_KEY = 'AIzaSyDQJz_qnHkYO5zWsijpbBh_cAToSoEsU2M';
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const YOUTUBE_WATCH_URI = 'https://www.youtube.com/watch?v=';
 const YOUTUBE_CHANNEL_URI = 'https://www.youtube.com/channel/';
@@ -5,7 +6,7 @@ const YOUTUBE_CHANNEL_URI = 'https://www.youtube.com/channel/';
 function getDataFromApi(query, callback) {
 	const params = {
 		part: 'snippet',
-		key: 'AIzaSyDQJz_qnHkYO5zWsijpbBh_cAToSoEsU2M',
+		key: API_KEY,
 		q: query
 	};
 	$.getJSON(YOUTUBE_SEARCH_URL, params, callback);
@@ -15,8 +16,8 @@ function renderResult(result) {
 	return `
 		<div class="search-result">
 			<div class="thumbnail">
-				<a href="${YOUTUBE_WATCH_URI}${result.id.videoId}">
-					<img src="${result.snippet.thumbnails.medium.url}" alt="Video thumbnail" />
+				<a href="${YOUTUBE_WATCH_URI}${result.id.videoId}" target="_blank" rel="noopener noreferrer">
+					<img src="${result.snippet.thumbnails.medium.url}" alt="${result.snippet.title} video thumbnail" />
 				</a>
 			</div>
 			<div class="video-info">
@@ -28,8 +29,17 @@ function renderResult(result) {
 }
 
 function displayYouTubeSearchData(data) {
+	const resultCount = data.pageInfo.totalResults;
 	const results = data.items.map((item, index) => renderResult(item));
-	$('.js-search-results').html(results);
+
+	$('.js-results-count')
+		.prop('hidden', false)
+		.html(`About ${resultCount} results`);
+
+	$('.js-search-results').empty();
+	$('.js-search-results')
+		.prop('hidden', false)
+		.html(results);
 }
 
 function watchSubmit() {

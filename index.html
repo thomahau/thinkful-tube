@@ -12,14 +12,13 @@
 	</header>
 	<main role="main">
 		<form action="#" method="get" class="search-form js-search-form">
-			<h2>Search for videos on YouTube</h2>
-			<label for="search-query">Search query</label>
+			<label for="search-query">YouTube search query:</label>
 			<input type="text" name="query" id="search-query" class="js-query">
 			<button type="submit">Search</button>
 		</form>
 
-		<h2>Results</h2>
-		<div class="js-search-results"></div>
+		<h3 class="js-results-count" aria-live="assertive" hidden></h3>
+		<div class="js-search-results" hidden></div>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="index.js"></script>

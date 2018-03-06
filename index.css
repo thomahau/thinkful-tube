@@ -18,24 +18,27 @@ main {
 .search-form label {
 	display: block;
 	margin-top: 10px;
+	font-size: 18px;
 }
 
 .search-form input {
-	width: 150px;
-	height: 21px;
+	width: 225px;
+	height: 23px;
 	margin-bottom: 20px;
+	margin-right: 5px;
 }
 
 .search-form button {
-	width: 60px;
+	width: 70px;
 	padding: 3px;
 	background-color: darkred;
 	color: white;
 	cursor: pointer;
+	font-size: 14px;
 }
 
 .search-result {
-  width: 320px;
+  	width: 320px;
 	margin: 15px 0;
 	border-top: 1px solid darkred;
 	border-bottom: 1px solid darkred;
@@ -46,7 +49,7 @@ main {
 }
 
 .video-info {
-  display: block;
+  	display: block;
 }
 
 .video-info a {
